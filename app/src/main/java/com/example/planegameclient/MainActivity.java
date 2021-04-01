@@ -15,6 +15,7 @@ import com.example.planegameclient.view.GameView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //按键x，y的状态值
     public int keyX;
     public int keyY;
 
