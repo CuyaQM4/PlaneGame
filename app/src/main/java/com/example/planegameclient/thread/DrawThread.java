@@ -10,12 +10,17 @@ import com.example.planegameclient.view.GameView;
  */
 public class DrawThread extends Thread{
     //启动线程的标识
-    public boolean flag = false;
+    private boolean flag = false;
     //休眠时间
-    public int SLEEP_SPAN =50;
+    private int SLEEP_SPAN =50;
+    private SurfaceHolder surFaceHolder;
+    private GameView gameView;
+
 
 
     public DrawThread(SurfaceHolder holder, GameView gameView) {
+        this.surFaceHolder = surFaceHolder;
+        this.gameView = gameView;
     }
 
     public void setFlag(boolean flag) {
