@@ -62,4 +62,9 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     //demo
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 }
