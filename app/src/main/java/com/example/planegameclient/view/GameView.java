@@ -28,14 +28,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     MainActivity activity;
     //刷帧线程对象
-    private DrawThread drawThread;
+    DrawThread drawThread;
     //画笔
-    private Paint paint;
+    Paint paint;
     //遥感中心点
-    private Point centerPoint = new Point(100, 900);
+    Point centerPoint = new Point(100, 900);
     //遥感类
-    private Joystick joystick;
-    private String str2;
+    Joystick joystick;
+    String str2;
 
     public GameView(Context context) {
         super(context);
@@ -52,9 +52,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     //绘制方法
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+    public void change_onDraw(Canvas canvas) {
         if (canvas == null) {
             return;
         }

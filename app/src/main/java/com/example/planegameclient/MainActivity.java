@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.planegameclient.thread.KeyThread;
 import com.example.planegameclient.thread.NetworkThread;
 import com.example.planegameclient.util.GameData;
 import com.example.planegameclient.view.GameView;
@@ -26,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     //界面显示类对象
     GameView gameView;
     //网络数据接收线程
-    public NetworkThread nwt;
+    public NetworkThread networkThread;
+    public KeyThread keyThread = new KeyThread(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_connect){
-            if (this.nwt == null){
-                this.nwt = new NetworkThread(MainActivity.this);
-                this.nwt.start();
+            if (this.networkThread == null){
+                this.networkThread = new NetworkThread(MainActivity.this);
+                this.networkThread.start();
             }
         }
         return true;
