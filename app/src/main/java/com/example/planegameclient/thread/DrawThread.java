@@ -27,4 +27,8 @@ public class DrawThread extends Thread{
         this.flag = flag;
     }
 
+    @Override
+    public void run() {
+        super.run();
+    }
 }
