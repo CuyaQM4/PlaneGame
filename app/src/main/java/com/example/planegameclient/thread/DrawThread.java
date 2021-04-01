@@ -6,9 +6,12 @@ import com.example.planegameclient.view.GameView;
 
 /**
  * Created by CNH on 2016/10/14.
+ * 刷帧线程，定时调用gameView的onDraw方法刷新显示界面
  */
 public class DrawThread extends Thread{
+    //启动线程的标识
     public boolean flag = false;
+    
 
     public DrawThread(SurfaceHolder holder, GameView gameView) {
     }
